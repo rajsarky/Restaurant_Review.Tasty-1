@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Restaurant Review</string>
+    <string name="title_activity_member_user_home">MemberUserHomeActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="tasty">Tasty?</string>
+    <string name="email">Provide your email address</string>
+    <string name="username">Create an username</string>
+    <string name="signup_password">Create a new password</string>
+    <string name="login_option">Already have an account Login?\n</string>
+    <string name="guest_login_option">Do you want to login as a Guest?</string>
+    <string name="loginPassword">Provide your password</string>
+    <string name="title_activity_main2">MainActivity2</string>
+    <string name="title_activity_main3">MainActivity3</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="search">Search</string>
+    <string name="addReels">Add Reels</string>
+    <string name="reels">Reels</string>
+    <string name="profile">Profile</string>
+</resources>
