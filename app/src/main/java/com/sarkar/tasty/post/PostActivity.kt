@@ -8,14 +8,17 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.Firebase
 import com.google.firebase.auth.auth
 import com.google.firebase.firestore.firestore
+import com.google.firebase.firestore.toObject
 import com.sarkar.tasty.MemberUserHomeActivity
 import com.sarkar.tasty.Models.Post
 
 import com.sarkar.tasty.databinding.ActivityPostBinding
 import com.sarkar.tasty.utils.POST
 import com.sarkar.tasty.utils.POST_FOLDER
+import com.sarkar.tasty.utils.USER_NODE
 import com.sarkar.tasty.utils.USER_PROFILE_FOLDER
 import com.sarkar.tasty.utils.uploadImage
+import com.sarkar.restaurantreview.Models.User
 
 
 class PostActivity : AppCompatActivity() {
@@ -59,14 +62,23 @@ class PostActivity : AppCompatActivity() {
         }
 
         binding.postButton.setOnClickListener {
-            val post:Post = Post(imageUrl!!,binding.caption.editText?.text.toString())
+            Firebase.firestore.collection(USER_NODE).document().get().addOnSuccessListener {
+                var user = it.toObject<User>()!!
+                val post: Post = Post(
+                    postUrl = imageUrl!!,
+                    caption = binding.caption.editText?.text.toString(),
+                    uid = Firebase.auth.currentUser!!.uid,
+                    time = System.currentTimeMillis().toString()
+                )
 
-            Firebase.firestore.collection(POST).document().set(post).addOnSuccessListener {
-                Firebase.firestore.collection(Firebase.auth.currentUser!!.uid).document().set(post).addOnSuccessListener {
-                    startActivity(Intent(this@PostActivity, MemberUserHomeActivity::class.java))
-                    finish()
+                Firebase.firestore.collection(POST).document().set(post).addOnSuccessListener {
+                    Firebase.firestore.collection(Firebase.auth.currentUser!!.uid).document().set(post).addOnSuccessListener {
+                        startActivity(Intent(this@PostActivity, MemberUserHomeActivity::class.java))
+                        finish()
+                    }
                 }
             }
+
         }
     }
 }
