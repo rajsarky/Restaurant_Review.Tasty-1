@@ -80,6 +80,7 @@ dependencies {
 
 
     implementation("de.hdodenhof:circleimageview:3.1.0")
+    implementation ("com.github.marlonlom:timeago:+")
 
 
 
