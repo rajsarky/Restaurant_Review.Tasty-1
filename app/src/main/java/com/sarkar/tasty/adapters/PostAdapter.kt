@@ -1,6 +1,7 @@
 package com.sarkar.tasty.adapters
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -45,6 +46,13 @@ class PostAdapter(var context: Context, var postList: ArrayList<Post>):
             val text = TimeAgo.using(postList.get(position).time.toLong())
             holder.binding.time.text =text
         } catch (e:Exception){ holder.binding.time.text ="" }
+
+        holder.binding.share.setOnClickListener {
+            var i = Intent(Intent.ACTION_SEND)
+            i.type = "text/plain"
+            i.putExtra(Intent.EXTRA_TEXT, postList.get(position).postUrl)
+            context.startActivity(i)
+        }
 
         holder.binding.caption.text = postList.get(position).caption
         holder.binding.like.setOnClickListener{
