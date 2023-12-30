@@ -146,7 +146,7 @@ class SignUpActivity : AppCompatActivity() {
         }
 
         binding.guestLogin.setOnClickListener{
-            startActivity(Intent(this@SignUpActivity, MemberUserHomeActivity::class.java))
+            startActivity(Intent(this@SignUpActivity, GuestActivity::class.java))
             finish()
         }
 
