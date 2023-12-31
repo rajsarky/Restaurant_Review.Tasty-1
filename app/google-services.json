@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "71041425025",
-    "project_id": "tasty-61289",
-    "storage_bucket": "tasty-61289.appspot.com"
+    "project_number": "749577795656",
+    "project_id": "tasty-b4321",
+    "storage_bucket": "tasty-b4321.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:71041425025:android:fa2007777ff449deaab780",
+        "mobilesdk_app_id": "1:749577795656:android:8a4e2b39af9660c492007d",
         "android_client_info": {
           "package_name": "com.sarkar.tasty"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyAO6vqlDLncwRlM2tH9LDj0zFziMmCYGk8"
+          "current_key": "AIzaSyDbzYBdWdxLkWeB3eg9JUuydhRLERE5Whg"
         }
       ],
       "services": {
