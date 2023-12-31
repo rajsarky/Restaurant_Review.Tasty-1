@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.Firebase
+import com.google.firebase.auth.auth
 import com.google.firebase.firestore.firestore
 import com.google.firebase.firestore.toObject
 import com.sarkar.restaurantreview.Models.User
@@ -40,15 +41,39 @@ class SearchFragment : Fragment() {
             var tempList = ArrayList<User>()
             userList.clear()
             for (i in it.documents){
-                var user: User = i.toObject<User>()!!
-                tempList.add((user))
+                if (i.id.toString().equals(Firebase.auth.currentUser!!.uid.toString())){
+
+                }else{
+                    var user: User = i.toObject<User>()!!
+                    tempList.add((user))
+                }
             }
             userList.addAll(tempList)
             adapter.notifyDataSetChanged()
         }
 
-        binding.searchView.setOnSearchClickListener{
+        binding.searchButton.setOnClickListener{
+            var text = binding.searchView.text.toString()
 
+            Firebase.firestore.collection(USER_NODE).whereEqualTo("name", text).get().addOnSuccessListener {
+                var tempList = ArrayList<User>()
+                userList.clear()
+                if (it.isEmpty){
+
+                } else {
+                    for (i in it.documents){
+                        if (i.id.toString().equals(Firebase.auth.currentUser!!.uid.toString())){
+
+                        }else{
+                            var user: User = i.toObject<User>()!!
+                            tempList.add((user))
+                        }
+                    }
+                }
+
+                userList.addAll(tempList)
+                adapter.notifyDataSetChanged()
+            }
         }
 
         return binding.root

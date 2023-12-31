@@ -6,16 +6,29 @@
     android:layout_height="match_parent"
     tools:context=".fragments.SearchFragment">
 
-    <SearchView
+    <EditText
         android:id="@+id/searchView"
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="24dp"
+        android:background="@drawable/search_box"
+        android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/search_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="@android:color/transparent"
+        android:src="@android:drawable/ic_menu_search"
+        app:layout_constraintBottom_toBottomOf="@+id/searchView"
+        app:layout_constraintEnd_toEndOf="@+id/searchView"
+        app:layout_constraintTop_toTopOf="@+id/searchView" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv"

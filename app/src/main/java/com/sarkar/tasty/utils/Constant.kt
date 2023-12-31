@@ -5,5 +5,6 @@ const val USER_PROFILE_FOLDER="Profile"
 const val POST_FOLDER = "PostImages"
 const val POST = "Post"
 const val REEL = "Reel"
-
+const val FOLLOW = "Follow"
 const val REEL_FOLDER = "Reels"
+
