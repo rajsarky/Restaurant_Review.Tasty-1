@@ -47,9 +47,10 @@ class HomeFragment : Fragment() {
         binding.postRv.layoutManager = LinearLayoutManager(requireContext())
         binding.postRv.adapter = adapter
 
-        binding.followRv.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-        //binding.followRv.adapter = followAdapter
         followAdapter = FollowAdapter(requireContext(), followList)
+        binding.followRv.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+        binding.followRv.adapter = followAdapter
+
 
         setHasOptionsMenu(true)
         (requireActivity() as AppCompatActivity).setSupportActionBar(binding.materialToolbar2)
