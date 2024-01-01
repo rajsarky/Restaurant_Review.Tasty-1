@@ -33,18 +33,32 @@
         app:riv_border_width="2dip"
         app:riv_corner_radius="20dip" />
 
+
+    <RatingBar
+        android:id="@+id/ratingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:numStars="5"
+        android:stepSize="0.5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/caption"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="@+id/caption"
+        app:layout_constraintTop_toBottomOf="@+id/select_image"
+        app:layout_constraintVertical_bias="0.0" />
+
     <com.google.android.material.textfield.TextInputLayout
 
         android:id="@+id/caption"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:hint="Write a caption"
+        android:layout_marginTop="5dp"
+        android:hint="@string/write_a_caption"
         android:visibility="visible"
         app:boxStrokeColor="@color/pink"
         app:layout_constraintEnd_toEndOf="@+id/select_image"
         app:layout_constraintStart_toStartOf="@+id/select_image"
-        app:layout_constraintTop_toBottomOf="@+id/select_image">
+        app:layout_constraintTop_toBottomOf="@+id/ratingBar">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/in_caption"

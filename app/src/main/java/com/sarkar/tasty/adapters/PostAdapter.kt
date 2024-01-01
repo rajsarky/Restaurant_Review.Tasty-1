@@ -54,6 +54,11 @@ class PostAdapter(var context: Context, var postList: ArrayList<Post>):
             context.startActivity(i)
         }
 
+        try {
+            holder.binding.ratingBar.rating = postList.get(position).rating!!
+        } catch (e:Exception){
+
+        }
         holder.binding.caption.text = postList.get(position).caption
         holder.binding.like.setOnClickListener{
             holder.binding.like.setImageResource(R.drawable.heart2)

@@ -21,4 +21,5 @@
     <string name="profile">Profile</string>
     <string name="discovery">Discovery</string>
     <string name="this_is_my_temp_data_for_video">This is my temp data for video</string>
+    <string name="write_a_caption">Write a caption</string>
 </resources>

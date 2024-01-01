@@ -68,7 +68,8 @@ class PostActivity : AppCompatActivity() {
                     postUrl = imageUrl!!,
                     caption = binding.caption.editText?.text.toString(),
                     uid = Firebase.auth.currentUser!!.uid,
-                    time = System.currentTimeMillis().toString()
+                    time = System.currentTimeMillis().toString(),
+                    rating = binding.ratingBar.rating
                 )
 
                 Firebase.firestore.collection(POST).document().set(post).addOnSuccessListener {
