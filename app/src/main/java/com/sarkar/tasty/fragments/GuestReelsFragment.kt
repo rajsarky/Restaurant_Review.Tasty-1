@@ -1,4 +1,4 @@
-package com.sarkar.tasty
+package com.sarkar.tasty.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -11,11 +11,10 @@ import com.google.firebase.firestore.toObject
 import com.sarkar.tasty.Models.Reel
 import com.sarkar.tasty.adapters.ReelAdapter
 import com.sarkar.tasty.databinding.FragmentGuestReelsBinding
-import com.sarkar.tasty.databinding.FragmentReelBinding
 import com.sarkar.tasty.utils.REEL
 
-
 class GuestReelsFragment : Fragment() {
+
     private lateinit var binding: FragmentGuestReelsBinding
     lateinit var adapter: ReelAdapter
     var reelList=ArrayList<Reel>()
